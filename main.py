@@ -15,4 +15,4 @@ if __name__ == "__main__":
                     
     args = p.parse_args()
                    
-    train(args)
+    train_model(args)
