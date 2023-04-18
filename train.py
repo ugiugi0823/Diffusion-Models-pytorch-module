@@ -1,3 +1,18 @@
+import os
+import torch
+import torch.nn as nn
+from matplotlib import pyplot as plt
+from tqdm import tqdm
+from torch import optim
+from utils import *
+from modules import *
+import logging
+from torch.utils.tensorboard import SummaryWriter
+
+
+logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s", level=logging.INFO, datefmt="%I:%M:%S")
+
+
 def train_model(args):
     setup_logging(args.run_name)
     device = args.device
