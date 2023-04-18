@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import logging
+from tqdm import tqdm
 
 class EMA:
     def __init__(self, beta):
