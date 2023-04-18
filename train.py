@@ -42,5 +42,7 @@ def train_model(args):
             logger.add_scalar("MSE", loss.item(), global_step=epoch * l + i)
 
         sampled_images = diffusion.sample(model, n=images.shape[0])
+        print(type(sampled_images))
+        show_tensor_images(sampled_images)
         save_images(sampled_images, os.path.join("results", args.run_name, f"{epoch}.jpg"))
         torch.save(model.state_dict(), os.path.join("models", args.run_name, f"ckpt.pt"))
